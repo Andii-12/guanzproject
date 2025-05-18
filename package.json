@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.7.0",
+    "qrcode.react": "^4.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

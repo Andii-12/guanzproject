@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ce2cebc9.css",
+    "main.js": "/static/js/main.b2dbf9cc.js",
+    "static/js/312.d94a2228.chunk.js": "/static/js/312.d94a2228.chunk.js",
+    "static/js/212.c0cd06e8.chunk.js": "/static/js/212.c0cd06e8.chunk.js",
+    "static/js/321.51c3075a.chunk.js": "/static/js/321.51c3075a.chunk.js",
+    "static/js/206.15c67a72.chunk.js": "/static/js/206.15c67a72.chunk.js",
+    "static/media/gulyash.jpg": "/static/media/gulyash.e56facf300adf1a0f7fc.jpg",
+    "static/media/khuushuur.jpg": "/static/media/khuushuur.a3ed0e64f398d02e9973.jpg",
+    "static/media/buuz.png": "/static/media/buuz.fd9223da3c4f09d39b7a.png",
+    "static/media/tsuivan.jpg": "/static/media/tsuivan.e7695b6b2af5299b4c2e.jpg",
+    "static/media/shol.jpg": "/static/media/shol.49c57aa0ae1e4ad10fc9.jpg",
+    "static/media/lavsha.jpg": "/static/media/lavsha.59419c860ccb7629e56f.jpg",
+    "static/media/bansh.jpg": "/static/media/bansh.6436f3d0bd9e9ca7f1a2.jpg",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.ce2cebc9.css",
+    "static/js/main.b2dbf9cc.js"
+  ]
+}
