@@ -137,7 +137,7 @@ const AdminPanel = () => {
       console.error('Failed to fetch orders:', err);
       setError('Failed to load orders. Please refresh the page.');
     }
-  }, [API_URL, audio, isFirstLoad, knownOrderIds, tabIndex]);
+  }, [audio, isFirstLoad, knownOrderIds, tabIndex]);
 
   useEffect(() => {
     fetchFoods();
