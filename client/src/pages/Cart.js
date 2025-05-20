@@ -122,6 +122,7 @@ const Cart = () => {
 
   return (
     <Container maxWidth="md" sx={{ py: { xs: 2, sm: 4 } }}>
+      {error && <div style={{ color: 'red', marginBottom: 16 }}>{error}</div>}
       <Typography variant="h4" gutterBottom>
         {tableNumber ? `Table ${tableNumber} - Cart` : 'Your Cart'}
       </Typography>
