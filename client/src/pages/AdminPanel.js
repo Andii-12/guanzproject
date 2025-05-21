@@ -277,7 +277,7 @@ const AdminPanel = () => {
 
   const handleDeleteFood = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/menu/${id}`);
+      const response = await axios.delete(`${API_URL}/menu/${id}`);
       if (response.data.message === 'Menu item deleted successfully') {
         setFoods(foods.filter(food => food._id !== id));
         setError(null);

@@ -26,6 +26,7 @@ import { addToCart, setTableNumber } from '../store/slices/cartSlice';
 import { useLocation } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
+import { API_URL } from '../config';
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ const Menu = () => {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/api/menu');
+        const response = await axios.get(`${API_URL}/menu`);
         setFoods(response.data);
         setError(null);
       } catch (err) {
