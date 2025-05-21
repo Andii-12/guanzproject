@@ -110,7 +110,7 @@ const Cart = () => {
           <Button
             variant="contained"
             color="primary"
-            onClick={() => navigate('/menu')}
+            onClick={() => navigate(`/menu?table=${tableNumber || 0}`)}
             sx={{ mt: 2 }}
           >
             Continue Shopping
