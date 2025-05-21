@@ -38,7 +38,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { API_URL } from '../config';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
 import '../fonts/NotoSans-normal.js';
 
 import tsuivanImg from '../images/tsuivan.jpg';
