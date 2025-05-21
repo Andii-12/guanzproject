@@ -251,7 +251,7 @@ const AdminPanel = () => {
         isAvailable: true
       };
 
-      const response = await axios.post('http://localhost:5000/api/menu', newFood);
+      const response = await axios.post(`${API_URL}/menu`, newFood);
       
       if (response.data) {
         setFoods([response.data, ...foods]);
@@ -313,7 +313,7 @@ const AdminPanel = () => {
 
   const handleEditSave = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/menu/${editForm._id}`, editForm);
+      const response = await axios.put(`${API_URL}/menu/${editForm._id}`, editForm);
       setFoods(foods.map(food => food._id === editForm._id ? response.data : food));
       setEditDialogOpen(false);
       setEditForm(null);
