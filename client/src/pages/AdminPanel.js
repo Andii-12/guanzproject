@@ -35,6 +35,8 @@ import {
 import { format } from 'date-fns';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import { API_URL } from '../config';
 import jsPDF from 'jspdf';
@@ -103,6 +105,8 @@ const AdminPanel = () => {
   const [audio] = useState(new Audio('/notification.mp3'));
   const [knownOrderIds, setKnownOrderIds] = useState(new Set());
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [showIncome, setShowIncome] = useState(false);
+  const [showLoss, setShowLoss] = useState(false);
 
   const fetchOrders = useCallback(async () => {
     try {
@@ -553,12 +557,20 @@ const AdminPanel = () => {
               1 жил
             </Button>
           </Box>
-          <Card sx={{ mb: 2, p: 2, backgroundColor: '#f5f5f5' }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Typography variant="h6" gutterBottom>Нийт Орлого: ₮{totalIncome.toLocaleString()}</Typography>
-              <Typography variant="h6" gutterBottom>Нийт Алдагдал: ₮{totalLoss.toLocaleString()}</Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Typography variant="h6" gutterBottom>Нийт Орлого: {showIncome ? `₮${totalIncome.toLocaleString()}` : '****'}</Typography>
+              <IconButton onClick={() => setShowIncome(v => !v)} size="small">
+                {showIncome ? <VisibilityOffIcon /> : <VisibilityIcon />}
+              </IconButton>
             </Box>
-          </Card>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Typography variant="h6" gutterBottom>Нийт Алдагдал: {showLoss ? `₮${totalLoss.toLocaleString()}` : '****'}</Typography>
+              <IconButton onClick={() => setShowLoss(v => !v)} size="small">
+                {showLoss ? <VisibilityOffIcon /> : <VisibilityIcon />}
+              </IconButton>
+            </Box>
+          </Box>
           <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
             <Button variant="outlined" onClick={goToIncomePreviousDay}>Previous Day</Button>
             <Typography variant="subtitle1">
