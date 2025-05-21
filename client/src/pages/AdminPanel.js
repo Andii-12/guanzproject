@@ -123,17 +123,14 @@ const AdminPanel = () => {
         return;
       }
 
-      if (tabIndex === 2) {
-        const newOrders = response.data.filter(order => !knownOrderIds.has(order._id));
-        
-        if (newOrders.length > 0) {
-          audio.play().catch(error => {
-            console.error('Error playing notification sound:', error);
-          });
-          
-          const newOrderIds = new Set(newOrders.map(order => order._id));
-          setKnownOrderIds(prev => new Set([...prev, ...newOrderIds]));
-        }
+      // Play notification if there are new orders (on any tab)
+      const newOrders = response.data.filter(order => !knownOrderIds.has(order._id));
+      if (newOrders.length > 0) {
+        audio.play().catch(error => {
+          console.warn('Notification sound could not be played. Check if /notification.mp3 exists and user has interacted with the page.', error);
+        });
+        const newOrderIds = new Set(newOrders.map(order => order._id));
+        setKnownOrderIds(prev => new Set([...prev, ...newOrderIds]));
       }
 
       setOrders(response.data);
@@ -141,7 +138,7 @@ const AdminPanel = () => {
       console.error('Failed to fetch orders:', err);
       setError('Failed to load orders. Please refresh the page.');
     }
-  }, [audio, isFirstLoad, knownOrderIds, tabIndex]);
+  }, [audio, isFirstLoad, knownOrderIds]);
 
   useEffect(() => {
     fetchFoods();
