@@ -392,6 +392,27 @@ const Menu = () => {
           {/* ... rest of cart content ... */}
         </Box>
       </Drawer>
+
+      {/* Copyright Footer */}
+      <Box
+        component="footer"
+        sx={{
+          py: 2,
+          px: 2,
+          mt: 'auto',
+          backgroundColor: (theme) => theme.palette.grey[100],
+          textAlign: 'center',
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+        }}
+      >
+        <Typography variant="body2" color="text.secondary">
+          © 2025 by ELVN. All rights reserved.
+        </Typography>
+      </Box>
     </Box>
   );
 };
