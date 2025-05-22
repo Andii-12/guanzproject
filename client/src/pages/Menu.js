@@ -43,6 +43,7 @@ const Menu = () => {
   const searchParams = new URLSearchParams(location.search);
   const tableNumber = searchParams.get('table') || "0";
   const [cartOpen, setCartOpen] = useState(false);
+  const [imagePreview, setImagePreview] = useState({ open: false, image: null });
 
   const categories = [
     { id: 'all', name: 'Бүх хоол' },
@@ -167,6 +168,14 @@ const Menu = () => {
     }
   };
 
+  const handleImageClick = (image) => {
+    setImagePreview({ open: true, image });
+  };
+
+  const handleCloseImagePreview = () => {
+    setImagePreview({ open: false, image: null });
+  };
+
   const filteredFoods = selectedCategory === 'all' 
     ? foods 
     : foods.filter(food => food.category === selectedCategory);
@@ -239,7 +248,14 @@ const Menu = () => {
                   height="200"
                   image={item.image}
                   alt={item.name}
-                  sx={{ objectFit: 'cover' }}
+                  sx={{ 
+                    objectFit: 'cover',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      opacity: 0.9
+                    }
+                  }}
+                  onClick={() => handleImageClick(item.image)}
                 />
                 <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                   <Typography variant="h6" gutterBottom>
@@ -317,6 +333,41 @@ const Menu = () => {
               Нэмэх
             </Button>
           </DialogActions>
+        </Dialog>
+
+        {/* Image Preview Dialog */}
+        <Dialog
+          open={imagePreview.open}
+          onClose={handleCloseImagePreview}
+          maxWidth="md"
+          fullWidth
+        >
+          <DialogContent sx={{ p: 0, position: 'relative' }}>
+            <IconButton
+              onClick={handleCloseImagePreview}
+              sx={{
+                position: 'absolute',
+                right: 8,
+                top: 8,
+                color: 'white',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                '&:hover': {
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                },
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            <img
+              src={imagePreview.image}
+              alt="Preview"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </DialogContent>
         </Dialog>
       </Container>
 
