@@ -31,7 +31,6 @@ const Navbar = () => {
 
   const menuItems = [
     { text: 'Меню', path: '/menu' },
-    { text: 'Хоол захиалах', path: '/cart', icon: <ShoppingCartIcon /> },
   ];
   if (user && user.role === 'admin') {
     menuItems.push({ text: 'Admin Panel', path: '/admin', icon: <AdminPanelSettingsIcon /> });
@@ -111,7 +110,32 @@ const Navbar = () => {
                 {item.text}
               </Button>
             ))}
+            <Button
+              color="inherit"
+              component={RouterLink}
+              to="/cart"
+              startIcon={<ShoppingCartIcon />}
+            >
+              Хоол захиалах
+            </Button>
           </Box>
+        )}
+        {isMobile && (
+          <Button
+            color="inherit"
+            component={RouterLink}
+            to="/cart"
+            startIcon={<ShoppingCartIcon />}
+            sx={{ 
+              minWidth: 'auto',
+              px: 1,
+              '& .MuiButton-startIcon': {
+                margin: 0
+              }
+            }}
+          >
+            Хоол захиалах
+          </Button>
         )}
       </Toolbar>
       <Drawer
