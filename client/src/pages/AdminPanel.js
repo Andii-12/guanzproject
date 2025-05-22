@@ -691,10 +691,16 @@ const AdminPanel = () => {
                     onChange={handleFoodFormChange}
                     required
                   >
+                    <MenuItem value="Бүх хоол">Бүх хоол</MenuItem>
                     <MenuItem value="1-р хоол">1-р хоол</MenuItem>
                     <MenuItem value="2-р хоол">2-р хоол</MenuItem>
-                    <MenuItem value="ширхэгийн хоол">Ширхэгийн хоол</MenuItem>
-                    <MenuItem value="Ус, ундаа, цай">Ус, ундаа, цай</MenuItem>
+                    <MenuItem value="Захиалгат хоол">Захиалгат хоол</MenuItem>
+                    <MenuItem value="Иж бүрдэл хоол">Иж бүрдэл хоол</MenuItem>
+                    <MenuItem value="Багц хоол">Багц хоол</MenuItem>
+                    <MenuItem value="Сет хоол">Сет хоол</MenuItem>
+                    <MenuItem value="Ширхэгийн хоол">Ширхэгийн хоол</MenuItem>
+                    <MenuItem value="Зууш">Зууш</MenuItem>
+                    <MenuItem value="Ус Ундаа">Ус Ундаа</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl sx={{ minWidth: 160 }}>
@@ -839,10 +845,16 @@ const AdminPanel = () => {
                     onChange={handleEditFormChange}
                     required
                   >
+                    <MenuItem value="Бүх хоол">Бүх хоол</MenuItem>
                     <MenuItem value="1-р хоол">1-р хоол</MenuItem>
                     <MenuItem value="2-р хоол">2-р хоол</MenuItem>
-                    <MenuItem value="ширхэгийн хоол">Ширхэгийн хоол</MenuItem>
-                    <MenuItem value="Ус, ундаа, цай">Ус, ундаа, цай</MenuItem>
+                    <MenuItem value="Захиалгат хоол">Захиалгат хоол</MenuItem>
+                    <MenuItem value="Иж бүрдэл хоол">Иж бүрдэл хоол</MenuItem>
+                    <MenuItem value="Багц хоол">Багц хоол</MenuItem>
+                    <MenuItem value="Сет хоол">Сет хоол</MenuItem>
+                    <MenuItem value="Ширхэгийн хоол">Ширхэгийн хоол</MenuItem>
+                    <MenuItem value="Зууш">Зууш</MenuItem>
+                    <MenuItem value="Ус Ундаа">Ус Ундаа</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
